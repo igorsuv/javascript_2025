@@ -19,4 +19,6 @@ console.log(typeof birth_year) // Output: number
 console.log(typeof isLearningJS) // Output: boolean
 console.log(typeof age) // Output: number
 console.log(hobbies[0], hobbies[2]) // Output: QA Basketball
-console.log(person, person.hobbies[1])
+console.log(person, person.hobbies[1]) 
+
+
