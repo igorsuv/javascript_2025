@@ -20,3 +20,129 @@ if (temp < 0 ) {
 } else {
     console.log('Очень жарко')
 }
+
+
+let login ; 
+login = 'admin'
+
+if (login === 'admin') {
+    console.log('Привет,админ!')
+} else if (login === 'qa') {
+    console.log('Привет,тестеровщик')
+} else {
+    console.log ('Привет пользователь')
+}
+
+
+let username = 'igor' ;
+let password = '12345' ;
+
+if (username === 'igor') { 
+    if (password === '12345') {
+        console.log('Вход разрешён')
+    } 
+} else {
+    console.log('Пользователь не найден')
+}
+
+
+let inStock = true;      // есть ли в наличии
+let balance = 500;       // баланс на счету
+let price = 300;         // цена товара
+
+
+if (inStock === true && balance >= price) {
+    console.log ('Покупка прошла успешно')
+} else if (inStock === false) {
+    console.log('Товара нет в наличии')
+} else if (price > balance) { 
+     console.log('Недостаточно средств')
+}
+
+
+let name = 'Игорь';
+let email = '';
+let age_1 = 22;
+
+
+if ( name && email && age_1 ) {
+    console.log('Форма отправлена')
+} else {
+    console.log('Заполни все поля')
+}
+
+
+
+let role = 'admin' 
+
+switch(role) {
+    case 'admin' :
+        console.log('Привет, админ!'); 
+        break;
+    case 'qa' :
+        console.log ('Привет, тестировщик!'); 
+        break;
+    case 'user' :
+        console.log ('Привет, пользователь!'); 
+        break;
+    case 'guest' :
+        console.log('Гость, пожалуйста, войдите');
+        break ;
+    default : 
+        console.log('Нет доступа!')
+}
+
+
+
+let day = 1 
+
+
+switch(day) {
+    case 1 :
+        console.log('Понедельник');
+        break;
+    case 2 :
+        console.log('Вторник'); 
+        break;
+    case 3 :
+        console.log('Cреда');
+        break;
+    case 4 :
+        console.log('Четверг');
+        break;
+    case 5 :
+        console.log('Пятница');
+        break;
+    case 6 :
+        console.log('Суббота');
+        break; 
+    case 7 :
+        console.log('Воскресенье');
+        break;
+    default :
+        console.log ('Такого дня нет')
+}
+
+
+
+
+let a_1 = 10 ;
+let b_1 = 5; 
+let operation = '*'
+
+switch(operation) {
+    case '+' :
+        console.log(a_1 + b_1);
+        break;
+    case '-' :
+        console.log(a_1 - b_1);
+        break;
+    case '*' :
+        console.log(a_1 * b_1);
+        break;
+    case '/' :
+        console.log(a_1 / b_1);
+        break;
+    default:
+    console.log('Неизвестная операция');
+}
