@@ -146,3 +146,80 @@ switch(operation) {
     default:
     console.log('Неизвестная операция');
 }
+
+
+
+let num; 
+num = -1
+
+if (num > 0 ) {
+    console.log('Положительное число')
+} else if (num < 0) {
+    console.log('Отрицательное число')
+} else {
+    console.log('Ноль')
+}
+
+
+let mark = 6 
+
+switch(mark) {
+    case 1 :
+        console.log('Ужасно')
+        break
+    case 2 :
+        console.log('Плохо')
+        break
+    case 3 :
+        console.log('Удовлетворительно')
+        break
+    case 4 :
+        console.log('Хорошо')
+        break
+    case 5 :
+        console.log('Отлично')
+        break
+    default :
+        console.log('Неизвестная оценка')
+
+    
+}
+
+
+let login_1 = 'qa';
+let password_1 = 'qwerty';  
+
+
+if (login_1 === 'admin' && password_1 === '1234') {
+        console.log('Привет, админ');
+} else if (login_1 ==='qa' && password_1 === 'qwerty') {
+    console.log('Привет, тестировщик')
+} else {
+    console.log('Ошибка авторизации')
+}
+
+
+number = 7 
+
+if (number % 2 === 0) {
+    console.log('Чётное')
+} else {
+    console.log('Нечётное')
+}
+
+
+let item = 'phone';
+
+switch(item) {
+    case 'phone' :
+        console.log('Товар : Смартфон')
+        break
+    case 'laptop' :
+        console.log('Товар : Ноутбук')
+        break
+    case 'monitor' :
+        console.log('Товар : Монитор')
+        break
+    default : 
+        console.log('Товар не найден')
+}
