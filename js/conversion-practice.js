@@ -234,87 +234,87 @@
 // let c3 = 'false';
 // console.log((a3 && b3) || !!c3); // Вывод в консоли : true, потому что оператор && вернет b3 (null), так как это первое ложное значение, а оператор || вернет c3 (true), так как 'false' является правдивым значением.
 
-let value;
+// let value;
 
-//  Number to String
+// //  Number to String
 
-value = 10;
-value = String(value);
-value = String(10 + 40);
-value = (40).toString();
+// value = 10;
+// value = String(value);
+// value = String(10 + 40);
+// value = (40).toString();
 
-// Boolean to String
+// // Boolean to String
 
-value = String(true);
-value = String(false);
+// value = String(true);
+// value = String(false);
 
-// Array to String
+// // Array to String
 
-value = String([1, 2, 3]);
+// value = String([1, 2, 3]);
 
-// Object to String
+// // Object to String
 
-value = String({
-  name: 'Igor',
-});
+// value = String({
+//   name: 'Igor',
+// });
 
-value = 30 + '' + 30;
-value = 30 + '';
-value = 30 - 'sadas';
-value = 30 - '10';
-value = true + 10;
-value = false + undefined;
+// value = 30 + '' + 30;
+// value = 30 + '';
+// value = 30 - 'sadas';
+// value = 30 - '10';
+// value = true + 10;
+// value = false + undefined;
 
-// String to Number
+// // String to Number
 
-value = Number('23');
-value = Number(true);
-value = Number(false);
-value = Number(null);
-value = Number('vsw');
-value = Number([1, 2, 3]);
+// value = Number('23');
+// value = Number(true);
+// value = Number(false);
+// value = Number(null);
+// value = Number('vsw');
+// value = Number([1, 2, 3]);
 
-value = parseInt('200');
-value = parseInt('200dadas');
-value = parseInt('das200');
+// value = parseInt('200');
+// value = parseInt('200dadas');
+// value = parseInt('das200');
 
-value = parseFloat('200.20dsada');
+// value = parseFloat('200.20dsada');
 
-// Boolean
-value = Boolean('wew');
-value = Boolean('');
-value = Boolean(100);
-value = Boolean(0);
-value = Boolean(undefined);
-value = Boolean(null);
-value = Boolean({});
-value = Boolean([]);
+// // Boolean
+// value = Boolean('wew');
+// value = Boolean('');
+// value = Boolean(100);
+// value = Boolean(0);
+// value = Boolean(undefined);
+// value = Boolean(null);
+// value = Boolean({});
+// value = Boolean([]);
 
-console.log(value);
-console.log(typeof value);
+// console.log(value);
+// console.log(typeof value);
 
-// Number
+// // Number
 
-const num1 = 10;
-const num2 = 20;
+// const num1 = 10;
+// const num2 = 20;
 
 let value1;
 
-// +*/-
+// // +*/-
 
-value1 = num1 + num2;
-value1 = value + 100;
-value1 += 100;
-// value = 5 % 2;
+// value1 = num1 + num2;
+// value1 = value + 100;
+// value1 += 100;
+// // value = 5 % 2;
 
-// value1 ++
-// ++value1
-value1--;
---value1;
+// // value1 ++
+// // ++value1
+// value1--;
+// --value1;
 
-value1 = 0.6 + 0.7;
+// value1 = 0.6 + 0.7;
 
-value1 = +value.toFixed(1); // округление до 1 знака после запятой и "+" конвертирует стороку в число
+// value1 = +value.toFixed(1); // округление до 1 знака после запятой и "+" конвертирует стороку в число
 
 //Math
 
@@ -325,16 +325,26 @@ value1 = +value.toFixed(1); // округление до 1 знака после
 // value1 = Math.floor(2.1)  // округляет всегда м меньшую сторону
 // value1 = Math.min (1,5,10,15) // Вернет минимальное число из переданого списка
 
-value1 = Math.floor(Math.random() * 10 + 1);
+// value1 = Math.floor(Math.random() * 10 + 1);
 
-const arr = ['black', 'red', 'pink'];
+// const arr = ['black', 'red', 'pink'];
 
-value1 = Math.floor(Math.random() * arr.length); 
+// value1 = Math.floor(Math.random() * arr.length);
 
+// value1 = parseInt('200xx');
+// value1 = parseFloat('12.33rer');
+// let num = 0.1 + 0.2;
+// value1 = +num.toFixed(2);
 
-console.log(value, arr[value]);
-console.log(typeof value);
+// value1 = Math.random();
+// value1 = Math.round(2.4);
+// value1 = Math.floor(3.9);
 
+// let prices = [100, 200, 300, 400];
+// let minPrice = Math.min(...prices);
 
+const temps = [12, 7, -5, 0, 4];
+let minTemps = Math.min(...temps)
 
-
+console.log(minTemps);
+console.log(typeof minTemps);
