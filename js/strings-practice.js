@@ -20,22 +20,17 @@ valueString = str.toUpperCase();
 valueString = str.includes('awesome');
 valueString = str.replace('awesome', 'powerful');
 valueString = str.slice(0, 10);
-valueString = str.indexOf('!')
+valueString = str.indexOf('!');
 
 console.log(valueString);
 
+const userName = '  iGoR  ';
 
-const userName = '  iGoR  '
+let valueUser = userName.trim();
 
-let valueUser = userName.trim(); 
+valueUser = valueUser.toLowerCase();
+let valueFirst = valueUser[0].toUpperCase();
 
-valueUser = valueUser.toLowerCase()
-let valueFirst = valueUser[0].toUpperCase()
-
-let newUserName = `${valueFirst}${valueUser.slice(1,5)}`
-
-
-
-
+let newUserName = `${valueFirst}${valueUser.slice(1, 5)}`;
 
 console.log(newUserName);
