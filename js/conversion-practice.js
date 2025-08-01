@@ -290,15 +290,15 @@
 // value = Boolean({});
 // value = Boolean([]);
 
-// console.log(value);
-// console.log(typeof value);
+console.log(value);
+console.log(typeof value);
 
 // // Number
 
 // const num1 = 10;
 // const num2 = 20;
 
-let value1;
+// let value1;
 
 // // +*/-
 
