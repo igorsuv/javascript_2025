@@ -919,17 +919,198 @@
 // 1. Выведи `12.5` с двумя знаками.
 // 2. Выведи `13` с тремя знаками.
 // 3. Сравни тип `toFixed`-результата и числа.
-// 4. Выведи `2.345` с двумя знаками, затем преобразуй обратно в число через `Number`.
-// 5. Выведи `0.1 + 0.2` с двумя знаками.
+// // 4. Выведи `2.345` с двумя знаками, затем преобразуй обратно в число через `Number`.
+// // 5. Выведи `0.1 + 0.2` с двумя знаками.
 
-let num = 0.1 + 0.2;
+// let num = 0.1 + 0.2;
+
+// let numFix = num.toFixed(2);
+
+// console.log(num);
+// console.log(typeof num);
+// console.log(numFix);
+// console.log(typeof numFix);
+
+// //Дан `[1.234, 2.5, 3]` → выведи каждый с 2 знаками как строки.
+
+// let arr = [1.234, 2.5, 3];
+
+// for (let value of arr) {
+//   console.log(value.toFixed(2));
+// }
+
+// let arr2 = [1.234, 2.5, 3];
+// let sumarr2 = 0;
+
+// for (let value of arr2) {
+//   sumarr2 = sumarr2 + value;
+// }
+
+// console.log(sumarr2.toFixed(3));
+
+// let arr3 = [-1.005, 1.005];
+
+// for (let value of arr3) {
+// }
+
+// //  Дан `{price:12.5, tax:0.2}` → посчитай `price * (1+tax)` и выведи с 2 знаками.
+
+// let obj = {
+//   price: 12.5,
+//   tax: 0.2,
+// };
+
+// let objRes = obj.price * (1 + obj.tax);
+
+// console.log(objRes.toFixed(2));
+
+// // Дан `{a:2.345, b:4}` → выведи `a` с 3 знаками, `b` с 1.
+
+// let obj2 = {
+//   a: 2.345,
+//   b: 4,
+// };
+
+// let obj2Res1 = obj2.a.toFixed(3);
+// let obj2Res2 = obj2.b.toFixed(3);
+
+// console.log(obj2Res1);
+// console.log(obj2Res2);
+
+// // Число `x=1.499`: если `x.toFixed(0) === "1"` → `"LOW"`, иначе `"HIGH"`.
+
+// let x = 1.499;
+
+// if (x.toFixed(0) === '1') {
+//   console.log('LOW');
+// } else {
+//   console.log('HIGH');
+// }
+
+// //если `Number(y.toFixed(2)) === 0`, выведи `"ZERO"`.
+
+// let y = 0;
+
+// if (Number(y.toFixed(2) === 0)) {
+//   console.log('ZERO');
+// } else {
+//   console.log(typeof y);
+// }
+
+// for (i = 1; i <= 5; i++) {
+//   let res = i / 3;
+//   console.log(res.toFixed(2));
+// }
+
+// //Пройдись по `[1.234,2.345,3.456]`, выведи каждое с 1 знаком и одновременно суммируй исходные числа.
+
+// let arr4 = [1.234, 2.345, 3.456];
+// let arr4Res = 0
+
+// for(let value of arr4){
+//     console.log(value.toFixed(1))
+//     arr4Res +=value
+// }
+
+// console.log(arr4Res)
+
+// `Math.random`
+// 1. Выведи случайное число 0..1 и его `toFixed(3)`.
+// 2. Выведи случайное целое 1..10.
+// 3. Выведи случайное целое 0..5.
+// 4. Выведи случайное число 5..10 (с дробью).
+// 5. Выведи случайное целое -3..3.
+
+// let num = Math.random().toFixed(3);
+// num = (Math.random() * 10).toFixed(0);
+// num = ((Math.random() * 10) / 2).toFixed(0);
+// num = Math.random() * 10;
+// if (num < 5) {
+//   num = num + 5;
+// } else {
+//   num = num;
+// }
+
+// num = Math.random();
+
+// // if (num % 2 === 0) {
+// //   num = (num * 3).toFixed(0);
+// // } else {
+// //   num = (num * -3).toFixed(0);
+// // }
+
+// console.log(num);
+
+// `Math.round`
+
+// **A. Простые**
+// 1. Округли `2.49`, `2.5`, `2.51`.
+// 2. Сравни `Math.round(2.5)` и `Math.round(-2.5)`.
+// 3. Округли `0.499` и `0.5`.
+// 4. Округли `99.9` и `100.1`.
+// 5. Округли `-1.1`, `-1.5`, `-1.9`.
+
+// let num = Math.round(2.49);
+
+// num = Math.round(3.5);
+// num = Math.round(2.51);
+
+// let arr = [1.2, 1.5, 1.8];
+// let arrRes = []
+
+// for(let value of arr) {
+//   arrRes.push(Math.round(value))
+// }
+
+// let arr = [-2.2,-2.5,-2.8];
+
+// let arrRes = []
+
+// for(let value of arr) {
+//   arrRes.push(Math.round(value))
+// }
+
+// let arr = [0.4,0.5,0.6];
+// let arrRes = []
+
+// for(let value of arr) {
+//   arrRes.push(Math.round(value))
+// }
+
+// console.log(`Масив до округления: ${arr}. Массив после округления ${arrRes} `);
+
+// let obj = {
+//   x: 2.49,
+//   y: 2.5,
+// };
+
+// let objRes = {};
+
+// for (let key in obj) {
+//   objRes[key] = Math.round(obj[key])
+// }
+
+// console.log(objRes);
+
+// if(obj.x === objRes.x && obj.y === objRes.y) {
+//   console.log('Равны')
+// }else{
+//   console.log('Неравны')
+// }
 
 
-let numFix = num.toFixed(2);
+// 10. Дан `{p:10.49, q:-10.51}` → округли и выведи сумму.
 
-console.log(num);
-console.log(typeof num);
-console.log(numFix);
-console.log(typeof numFix); 
+let obj = {
+  p:10.49, 
+  q:-10.51
+}
 
- 
+let objRes = 0 
+
+
+for(let key in obj) {
+  objRes += Math.round(obj[key]) 
+}
+
+console.log(objRes)
