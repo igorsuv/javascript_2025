@@ -1706,11 +1706,11 @@
 // let obj2ResSum = obj2Res.p1 + obj2Res.p2 + obj2Res.p4;
 
 // // Выводим стреднее
-// let obj2ResSr = obj2Res.p2; 
+// let obj2ResSr = obj2Res.p2;
 
-// // Выводим минимум 
+// // Выводим минимум
 
-// let obj2ResMin = Math.min(...Object.values(obj2Res)) 
+// let obj2ResMin = Math.min(...Object.values(obj2Res))
 
 // console.log(objRes);
 // console.log(obj2Res);
@@ -1718,14 +1718,10 @@
 // console.log(obj2ResSr);
 // console.log(obj2ResMin);
 
-
-
-
-// 3) Сгенерируй массив из 10 случайных чисел `0..1`.  
-// — Выведи каждое с `toFixed(3)`,  
-// — отдельно выведи `Math.min(...arr)`,  
+// 3) Сгенерируй массив из 10 случайных чисел `0..1`.
+// — Выведи каждое с `toFixed(3)`,
+// — отдельно выведи `Math.min(...arr)`,
 // — посчитай сколько значений < 0.5 (через `for` и `if`).
-
 
 // let arr = []
 
@@ -1737,7 +1733,6 @@
 
 // let  count = 0
 
-
 // for(let value of arr) {
 //   if(value < 0.5) {
 //     count++
@@ -1748,23 +1743,22 @@
 // console.log(min);
 // console.log(count);
 
-
-// 4) Дан `value="  Igor  "`.  
-// — Убери пробелы по краям (можно руками: пока первый символ — пробел, «срезай» через индексы; то же с хвоста),  
-// — выведи первый, второй и последний символы,  
+// 4) Дан `value="  Igor  "`.
+// — Убери пробелы по краям (можно руками: пока первый символ — пробел, «срезай» через индексы; то же с хвоста),
+// — выведи первый, второй и последний символы,
 // — если длина ≥ 4, выведи четвёртый символ.
 
 let value = '  Igor  ';
 
-let valueRes = value.trim()
+let valueRes = value.trim();
 
-if(valueRes.length >= 4){
-  console.log(valueRes[3])
+if (valueRes.length >= 4) {
+  console.log(valueRes[3]);
 }
 
-
-
-console.log(valueRes[0])
+console.log(valueRes[0]);
 console.log(valueRes[1]);
-console.log(valueRes[valueRes.length -1])
+console.log(valueRes[valueRes.length - 1]);
 console.log(valueRes.length);
+
+s;
