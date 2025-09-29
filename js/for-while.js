@@ -1098,19 +1098,673 @@
 //   console.log('Неравны')
 // }
 
-
 // 10. Дан `{p:10.49, q:-10.51}` → округли и выведи сумму.
 
-let obj = {
-  p:10.49, 
-  q:-10.51
+// let obj = {
+//   p:10.49,
+//   q:-10.51
+// }
+
+// let objRes = 0
+
+// for(let key in obj) {
+//   objRes += Math.round(obj[key])
+// }
+
+// console.log(objRes)
+
+// **D. if/else**
+// 11. `v=1.49`: если `Math.round(v)===1` → `"ONE"` иначе `"NOT ONE"`.
+// 12. `v=2.5`: если округление даёт чётное число — `"EVEN"`.
+
+// let v = 1.49;
+
+// if (Math.round(v) === 1) {
+//   console.log('ONE');
+// } else {
+//   console.log('NOT ONE');
+// }
+
+// let v2 = 2.5;
+
+// if (Math.round(v2) % 2 === 0) {
+//   console.log('EVEN');
+// }else{
+//   console.log(Math.round(v2))
+// }
+
+// for(let i = 1; i <=5; i++) {
+//   let num = i + 0.49
+//   console.log(i, '-', num, '-', Math.round(num))
+// }
+
+// let arr = [1.1,1.9,2.1,2.9]
+
+// let resArr = 0
+
+// for(let i = 0; i < arr.length; i++) {
+//   resArr += Math.round(arr[i])
+
+// }
+// console.log(resArr)
+
+// **A. Простые**
+// 1. Потолочное округление `2.01`, `2.99`.
+// 2. Потолочное округление `-1.01`.
+// 3. Потолочное округление `0.0001`.
+// 4. Сравни `ceil` и `round` для `2.5`.
+// 5. Сравни `ceil` для `-2.5` и `round` для `-2.5`.
+
+// let num = Math.ceil(2.01)
+// num = Math.ceil(-1.01)
+// num = Math.ceil(0.0001)
+
+// num = Math.ceil(-2.5)
+// let num2 = Math.round(-2.5)
+
+// console.log(`ceil 2.5 = ${num} , a round 2.5 = ${num2} `)
+
+// let arr = [1.1, 1.01, 1.99];
+// let arrRes = [];
+
+// for (let value of arr) {
+//   arrRes.push(Math.ceil(value));
+// }
+
+// console.log(arrRes);
+
+// let arr2 = [-1.1, -1.01, -1.99];
+// let arrRes2 = [];
+
+// for (let value of arr2) {
+//   arrRes2.push(Math.ceil(value));
+// }
+
+// console.log(arrRes2);
+
+// let arr = [2.2, 2.5, 2.8];
+
+// let arrRes = [];
+
+// for (let value of arr) {
+//   arrRes.push(Math.ceil(value));
+// }
+
+// console.log(arrRes);
+
+// let obj = {
+//   a:3.14,
+//   b:-3.14
+// };
+
+// for(let key in obj) {
+//   console.log(Math.ceil(obj[key]))
+// }
+
+// let obj = {
+//   p:0.1,
+//   q:0.9
+// };
+
+// let sum = 0
+
+// for(let key in obj) {
+//   console.log(Math.ceil(obj[key]))
+//   sum += Math.ceil(obj[key])
+// }
+
+// console.log(sum)
+
+// `v=1.001`: если `Math.ceil(v)===2` → `"UP"`.
+
+// let v = 1.001
+
+// if(Math.ceil(v) === 1) {
+//   console.log('UP')
+// }else{
+//   console.log('Другое')
+// }
+
+// `v=-0.1`: если `ceil(v)===0` → `"ZERO"`, иначе `"NEG"`.
+
+// let v2 = 0.1
+
+// if(Math.ceil(v) === 0){
+//   console.log('ZERO')
+// }else{
+//   console.log('NEG')
+// }
+
+// 13. От `i=1` до `5` выведи `Math.ceil(i-0.01)`.
+// 14. Пройди по `[1.4,2.4,3.4]`, выведи сумму потолочных округлений.
+
+// for (let i = 1; i <= 5; i++) {
+//   let res = Math.ceil(i - 0.01);
+//   console.log(res);
+// }
+
+// let arr = [1.4, 2.4, 3.4];
+// let sum = 0;
+
+// for (let i = 0; i <= arr.length - 1; i++) {
+//   sum += Math.ceil(arr[i]);
+// }
+
+// console.log(sum);
+
+// **A. Простые**
+// 1. Пол округление `2.99`, `2.01`.
+// 2. Пол округление `-1.01`.
+// 3. Пол округление `0.9999`.
+// 4. Сравни `floor` и `round` для `2.5`.
+// 5. Сравни `floor` для `-2.5` и `round` для `-2.5`.
+
+// let num = Math.floor(2.99);
+// num = Math.floor(2.01);
+// num = Math.floor(-1.01);
+// num = Math.floor(0.999);
+
+// num = 2.5;
+// console.log(
+//   `Round для ${num} = ${Math.round(num)} . Floor для ${num} = ${Math.floor(
+//     num
+//   )}`
+// );
+
+// num = -2.5;
+// console.log(
+//   `Round для ${num} = ${Math.round(num)} . Floor для ${num} = ${Math.floor(
+//     num
+//   )}`
+// );
+
+// **B. В массиве**
+// 6. Дан `[1.9,1.01,1.5]` → `floor` для каждого.
+// 7. Дан `[-1.9,-1.01,-1.5]` → `floor` для каждого.
+// 8. Дан `[2.2,2.5,2.8]` → выведи `floor`-массив.
+
+// let arr = [1.9, 1.01, 1.5];
+
+// for(let value of arr) {
+//   console.log(Math.floor(value))
+// }
+
+// let arr = [-1.9, -1.01, -1.5];
+
+// for(let value of arr) {
+//   console.log(Math.floor(value))
+// }
+
+// let arr = [2.2, 2.5, 2.8];
+// let arrRes = []
+
+// for(let value of arr){
+//   arrRes.push(Math.floor(value))
+// }
+
+// console.log(arrRes)
+
+// **C. В объекте**
+// 9. Дан `{a:3.14, b:-3.14}` → выведи `floor(a)` и `floor(b)`.
+// 10. Дан `{p:0.1, q:0.9}` → выведи их полные округления и сумму.
+
+// let obj = {
+//   a: 3.14,
+//   b: -3.14,
+// };
+
+// let objRes = {}
+
+// for(let key in obj) {
+//  objRes[key] = Math.floor(obj[key])
+// }
+
+//  console.log(objRes);
+
+// let obj = {
+//   p: 0.1,
+//   q: 0.9,
+// };
+
+// let objRes = {};
+
+// for (let key in obj) {
+//   objRes[key] = Math.floor(obj[key]);
+// }
+
+// console.log(
+//   `Округлене а = ${objRes.p} \nокругление b = ${objRes.q}\nCумма = ${
+//     objRes.p + objRes.q
+//   }`
+// );
+
+// let num = Math.min(5,3,8,1)
+
+// let num1 = Math.min(0)
+// num = Math.min()
+// num = Math.min('1', 3)
+// num = Math.min(NaN, 1);
+// num1 = [-1, 0, 1];
+// num = Math.min(num1)
+
+// console.log(num)
+
+// **B. В массиве**
+// 6. Дан `[4,2,7,-1,0]` → найди минимум (через спред).
+// 7. Дан `["10","-5","3"]` → сначала в числа, затем минимум.
+// 8. Дан `["x","5","-2","y"]` → конвертируй в числа, игнорируй `NaN`, найди минимум.
+
+// let arr = [4, 2, 7, -1, 0];
+
+// let res = Math.min(...arr)
+
+// console.log(res)
+
+// let arr = ['10', '-5', '3'];
+
+// let res = []
+
+// for(let value of arr) {
+//   res.push(parseInt(value))
+// }
+
+// res = Math.min(...res)
+
+// console.log(res)
+
+// console.log(`Минимум от (0) ${num1} и Минимум () ${num}`)
+
+// let arr = ['x', '5', '-2', 'y'];
+
+// let resArr = []
+
+// for(let value of arr) {
+//   if(!isNaN(value)) {
+//     resArr.push(Number(value))
+//   }
+// }
+
+// resArr = Math.min(...resArr)
+
+// console.log(resArr)
+
+// **C. В объекте**
+// 9. Дан `{a:"3", b:"-7", c:" 2 "}` → в числа и минимум по полям.
+// 10. Дан `{x:12,y:8,z:15}` → выведи минимум значений.
+
+// let obj = {
+//   a: '3',
+//   b: '-7',
+//   c: ' 2 ',
+// };
+
+// let objRes = [];
+
+// for (let key in obj) {
+//   objRes[key] = Number(obj[key]);
+// }
+
+// let minVal = Math.min(...Object.values(objRes));
+
+// console.log(minVal);
+
+// 11. Дано `m = Math.min(3,2,5)`: если `m<3` → `"OK"`, иначе `"NO"`.
+// 12. Минимум среди `a,b`: если `a<b` выведи `"A"`, иначе `"B или ="`.
+
+// let num = Math.min(3, 2, 5);
+
+// if (num < 3) {
+//   console.log('ОК');
+// } else {
+//   console.log('NO');
+// }
+
+// let a = 3;
+// let b = 5;
+
+// if (a < b) {
+//   console.log('A');
+// } else {
+//   console.log('B');
+// }
+
+// let arr = ['10', 'abc', '-1', '0'];
+// let res = [];
+
+// for (let i = 0; i <= arr.length; i++) {
+//   if (!isNaN(arr[i])) {
+//     res.push(Number(arr[i]));
+//   }
+// }
+
+// let min = Math.min(...res);
+
+// console.log(min);
+
+// **A. Простые**
+// 1. Пусть `value="Igor"` — выведи второй символ (`"g"`).
+// 2. Выведи последний символ строки `"QA"`.
+// 3. Выведи длину строки `"automation"`.
+// 4. Для `"hello"` выведи каждый символ с индексом 0..4 (по одному выражению на строку).
+// 5. Для `"test"` выведи третий символ и сравни с `'s'`.
+
+// let value = 'Igor'
+// value = 'QA'
+// value = 'automation'
+// value = 'hello'
+
+// for(let i = 0; i <=value.length-1 ; i++) {
+//   console.log(value[i])
+// }
+
+// value = 'test'
+
+// if(value[3] === 's' ){
+//   console.log('True')
+//   }else{
+//     console.log('False');
+//   }
+
+// console.log(value)
+
+// let arr = ['cat', 'dog', 'bird'];
+
+// for (let value of arr) {
+//   console.log(value[1]);
+// }
+
+// . Дан `["QA","JS","UI"]` → выведи последний символ каждой строки.
+
+// let arr = ['QA', 'JS', 'UI'];
+
+// for(let value of arr) {
+//   console.log(value[value.length-1])
+// }
+
+// Дан `["hello","world","!"]` → собери массив первых символов.
+
+// let arr = ['hello', 'world', '!'];
+
+// let arrRes = [];
+
+// for (let value of arr) {
+//   arrRes.push(value[0]);
+// }
+
+// console.log(arrRes);
+
+// let obj = {
+//   first: 'Igor',
+//   last: 'QA',
+// };
+
+// let arrObj = []
+
+// for(let key in obj){
+//  let value = obj[key]
+//  arrObj.push(value[0])
+//   arrObj.push(value[value.length - 1])
+
+// }
+
+// console.log(arrObj);
+
+// let arrRes = {}
+
+// for(let key in obj){
+//    arrRes.firstLet = obj[key]
+//    arrRes.la
+// }
+
+// console.log(arrRes);
+
+// let obj = {
+//   city: 'Dnipro',
+//   country: 'Ukraine',
+// };
+
+// let objArr = [];
+
+// for (let key in obj) {
+//   let value = obj[key]
+//   objArr.push(value[0]);
+//   objArr.push(value[value.length - 1]);
+// }
+
+// console.log(objArr);
+
+// let obj2 = {
+//   lang: 'JavaScript',
+//   type: 'Test'
+//  };
+
+// let obj2Arr = []
+
+// for(let key in obj2){
+//   let value = obj2[key]
+//   obj2Arr.push(value[0])
+//   obj2Arr.push(value[value.length-1])
+// }
+// console.log(obj2Arr);
+
+// let obj = {
+//   car: 'Tesla',
+//   model: 'S',
+// };
+
+// let objRes = {};
+
+// for (let key in obj) {
+//   let value = obj[key];
+//   objRes.first = [value[0]];
+//  objRes[key] = [v
+// alue[0], value[value.length - 1]];
+
+// }
+
+// console.log(objRes)
+
+// {car:"Tesla", model:"S"} → преобразуй в объект.
+// 👉 ожидаем {car:["T","a"], model:["S","S"]}
+
+// {name:"Alex", job:"QA"} → аналогично.
+// 👉 ожидаем {name:["A","x"], job:["Q","A"]}
+
+// let obj = {
+//   name: 'Alex',
+//   job: 'QA'
+// };
+
+// let objRes = {}
+
+// for(let key in obj){
+//   let value = obj[key]
+//   objRes[key] = [value[0], value[value.length -1]]
+// }
+
+// console.log(objRes)
+
+// . Дан `{a:"one", b:"two", c:"three"}` → собери строку из вторых символов: `"n" + "w" + "h"`.
+
+// let obj = {
+//   a: 'one',
+//   b: 'two',
+//   c: 'three',
+// };
+
+// let objRes = ''
+
+// for(let key in obj){
+//   let value = obj[key]
+//   objRes += value[1]
+// }
+
+// console.log(objRes)
+
+// `s="automation"`: если первый символ `'a'`, выведи `"starts with a"`, иначе `"no"`.
+
+// let s = 'automation'
+
+// if(s[0] === 'a'){
+//   console.log('starts with a')
+// }else{
+//   console.log('no')
+// }
+
+// `s="Js"`: если второй символ — `'s'` (с маленькой буквой), выведи `"ok"`, иначе `"bad"`.
+
+// let s = 'Js'
+
+// if(s[1] === 's'){
+//   console.log('oк')
+// }else{
+//   console.log('bad')
+// }
+
+// Пройдись по `"Igor"` и выведи каждый символ в отдельной строке.
+
+// let firstName = 'Igor';
+
+// for (let i = 0; i <= firstName.length - 1; i++) {
+//   console.log(firstName[i]);
+// }
+
+// . Дан массив `["apple","banana","kiwi"]`: в цикле выведи строку `"первый+последний"` для каждого (например, `"ae"`, `"ba"`, `"ki"`).
+
+// let arr = ['apple', 'banana', 'kiwi'];
+// let arrRes = []
+
+// for(let i = 0; i <= arr.length-1; i++){
+//   let word= arr[i]
+//   let combo = word[0]+ word[word.length -1]
+//   arrRes.push(combo)
+// }
+
+// console.log(arrRes)
+
+// 1) Дан массив строк `["12.5px","-3.1px","0px","bad"]`.
+// — Сначала замени `"px"` на `""`,
+// — затем конвертируй в числа: где возможно `parseFloat`, иначе игнорируй,
+// — выведи `min` и каждое число с `toFixed(2)`.
+
+// let arr = ['12.5px', '-3.1px', '0px', 'bad'];
+// let arrRes = []
+
+// // let a = isNaN('12.5px');
+// // console.log(a)
+
+// for(let value of arr){
+//   arrRes.push(value.replace('px' , ''))
+// }
+// let arrRes2 = []
+
+// for(let value of arrRes) {
+//   if(!isNaN(value)){
+//     arrRes2.push(parseFloat(value));
+//   }
+
+// }
+
+// console.log(arrRes2)
+
+//  console.log(Math.min(...arrRes2))
+
+// for(let value of arrRes2){
+//   console.log(value.toFixed(2))
+// }
+
+// 2) Дан объект цен `{p1:" 10.00 ", p2:"8.5$", p3:"abc", p4:"15"}`.
+// — Приведи к числам (`Number`/`parseFloat`),
+// — отбрось `NaN`,
+// — выведи сумму, среднее, минимум.
+
+// let obj = {
+//   p1: ' 10.00 ',
+//   p2: '8.5$',
+//   p3: 'abc',
+//   p4: '15',
+// };
+
+// let objRes = {};
+
+// for (let key in obj) {
+//   let value = obj[key];
+//   objRes[key] = parseFloat(value);
+// }
+
+// let obj2Res = {};
+
+// for (let key in objRes) {
+//   let value = objRes[key];
+//   if (!isNaN(value)) {
+//     obj2Res[key] = value;
+//   }
+// }
+
+// //Выводим сумму
+
+// let obj2ResSum = obj2Res.p1 + obj2Res.p2 + obj2Res.p4;
+
+// // Выводим стреднее
+// let obj2ResSr = obj2Res.p2; 
+
+// // Выводим минимум 
+
+// let obj2ResMin = Math.min(...Object.values(obj2Res)) 
+
+// console.log(objRes);
+// console.log(obj2Res);
+// console.log(obj2ResSum);
+// console.log(obj2ResSr);
+// console.log(obj2ResMin);
+
+
+
+
+// 3) Сгенерируй массив из 10 случайных чисел `0..1`.  
+// — Выведи каждое с `toFixed(3)`,  
+// — отдельно выведи `Math.min(...arr)`,  
+// — посчитай сколько значений < 0.5 (через `for` и `if`).
+
+
+// let arr = []
+
+// for(let i = 0; i<= 9; i++){
+//   arr.push(Math.random(i).toFixed(2))
+// }
+
+// let min = Math.min(...arr)
+
+// let  count = 0
+
+
+// for(let value of arr) {
+//   if(value < 0.5) {
+//     count++
+//   }
+// }
+
+// console.log(arr)
+// console.log(min);
+// console.log(count);
+
+
+// 4) Дан `value="  Igor  "`.  
+// — Убери пробелы по краям (можно руками: пока первый символ — пробел, «срезай» через индексы; то же с хвоста),  
+// — выведи первый, второй и последний символы,  
+// — если длина ≥ 4, выведи четвёртый символ.
+
+let value = '  Igor  ';
+
+let valueRes = value.trim()
+
+if(valueRes.length >= 4){
+  console.log(valueRes[3])
 }
 
-let objRes = 0 
 
 
-for(let key in obj) {
-  objRes += Math.round(obj[key]) 
-}
-
-console.log(objRes)
+console.log(valueRes[0])
+console.log(valueRes[1]);
+console.log(valueRes[valueRes.length -1])
+console.log(valueRes.length);
