@@ -1748,17 +1748,248 @@
 // — выведи первый, второй и последний символы,
 // — если длина ≥ 4, выведи четвёртый символ.
 
-let value = '  Igor  ';
+// let value = '  Igor  ';
 
-let valueRes = value.trim();
+// let valueRes = value.trim();
 
-if (valueRes.length >= 4) {
-  console.log(valueRes[3]);
+// if (valueRes.length >= 4) {
+//   console.log(valueRes[3]);
+// }
+
+// console.log(valueRes[0]);
+// console.log(valueRes[1]);
+// console.log(valueRes[valueRes.length - 1]);
+// console.log(valueRes.length);
+
+// ### A. Простые
+// 1. Заменить `"cat"` на `"dog"` в строке `"I have a cat"`.
+// 2. В `"Igor"` заменить букву `"o"` на `"a"`.
+// 3. В `"banana"` заменить первую `"a"` на `"A"`.
+// 4. Убрать дефис из `"123-456"`.
+// 5. Заменить `"JS is hard"` на `"JS is easy"`.
+
+// let lastName = 'I have a cat'
+
+// let res = lastName.replace('cat', 'dog')
+
+// lastName = 'Igor'
+// res = lastName.replace('o','a')
+// lastName = 'banana'
+// res = lastName.replace('a','A')
+// lastName = '123-456'
+// res = lastName.replace('-', '')
+
+// console.log(res)
+
+// ### B. В массиве
+// 6. Дан массив `["dog-cat","apple-banana","red-blue"]` → в каждом элементе замени `"-"` на `":"`.
+// 7. Дан массив `["Igor","Oleg","Inna"]` → замени первую букву `"I"` на `"A"`.
+// 8. Дан массив `["11-22","33-44","55-66"]` → убери дефисы в каждом числе.
+
+// let arr = ['dog-cat', 'apple-banana', 'red-blue'];
+// let arrRes =[]
+
+// for(let value of arr) {
+//   arrRes.push(value.replace('-', ':'))
+// }
+
+// console.log(arrRes)
+
+// let arr = ["Igor","Oleg","Inna"]
+// let arrRes = []
+
+// for(let value of arr){
+//   arrRes.push(value.replace('I', 'A'))
+// }
+
+// console.log(arrRes)
+
+// let arr = ['11-22', '33-44', '55-66'];
+
+// let arrRes = []
+
+// for(let value of arr){
+//   arrRes.push(value.replace('-', ''))
+// }
+
+// console.log(arrRes);
+
+// let obj = {
+//   name: 'Mr. Igor',
+//   city: 'Dnipro',
+// };
+// for (let key in obj) {
+//   let value = obj[key];
+//   obj[key] = value.replace('Mr. ', '');
+// }
+// console.log(obj);
+
+// let obj2 = {
+//   phone: '123-456',
+//   code: 'abc-def',
+// };
+
+// for (let key in obj2) {
+//   let value = obj2[key];
+//   obj2[key] = value.replace('-', '');
+// }
+
+// console.log(obj2);
+
+// let s = 'hello world';
+
+// if(s.replace('world','JS') === 'hello JS') {
+//     console.log('ОК')
+// } else{
+//     console.log('FAIL')
+// }
+
+// s = 'abc123'
+
+// if(s.replace('123', '') === 'abc'){
+//     console.log('ОК')
+// }else{
+//     console.log('FAIL')
+// }
+
+// let arr = ["test1","test2","test3"];
+
+// for(let i = 0; i <= arr.length-1 ; i++) {
+//     arr[i] = arr[i].replace('t', 'T');
+// }
+
+// console.log(arr)
+
+// let arr = ['a-b-c', 'd-e-f', 'g-h-i'];
+
+// for (let i = 0; i <= arr.length - 1; i++) {
+//   arr[i] = arr[i].replace('-', ':');
+// }
+
+// console.log(arr);
+
+// let str = 'aaaaa';
+
+// for (let i = 0; i < str.length; i++) {
+//   str = str.replace('a', 'A'); // заменяет только первую 'a'
+//   console.log(str);
+// }
+
+// console.log('Итог:', str);
+
+// let a = '   hello   world   ';
+
+// console.log(a.replace('   ',''))
+
+// let b = '12px  15px  20px';
+
+// console.log(b.replaceAll('px', ''));
+
+// let c = 'aaa-bbb-ccc';
+
+// console.log(c.replaceAll('-' , ' '))
+
+// let arr = ["name:Igor","age:25","city:Dnipro"];
+
+// for(let i = 0; i <= arr.length - 1; i++) {
+//     arr[i] = arr[i].replace(':', '=')
+// }
+
+// console.log(arr)
+
+// let obj = {
+//     login:"user_01",
+//     pass:"qwerty_123"
+// };
+
+// for(let key in obj){
+
+//     obj[key] = obj[key].replace('_', ' ');
+// }
+
+// console.log(obj)
+
+// Переменная `status = "pending"`.
+// Сделай `switch`, который выводит:
+
+// - `"В обработке"`
+
+// - `"Успешно"`
+
+// - `"Ошибка"`
+
+// - `"Неизвестный статус"`
+
+let status1 = 'pending';
+
+switch (status1) {
+  case 'pending':
+    console.log('В обработке');
+    break;
+  case 'success':
+    console.log('Успех');
+    break;
+  case 'error':
+    console.log('Ошибка');
+    break;
+  default:
+    console.log('неизвестный статус');
 }
 
-console.log(valueRes[0]);
-console.log(valueRes[1]);
-console.log(valueRes[valueRes.length - 1]);
-console.log(valueRes.length);
+// Переменная `browser`.
+// Сделай `switch`, который выводит:
 
-s1;
+// - `"Chrome"` или `"Firefox"` → `"Поддерживается"`
+
+// - `"Safari"` → `"Частично поддерживается"`
+
+// - `"IE"` → `"Не поддерживается"`
+
+// let browser = 'Firefox';
+
+// switch (browser) {
+//   case 'Chrome':
+//   case 'Firefox':
+//     console.log('Поддерживается');
+//     break;
+
+//   case 'Safari':
+//     console.log('Частично поддерживается');
+//     break;
+
+//   case 'IE':
+//     console.log('Не поддерживается')
+
+//   default:
+//     console.log('Неизвестный браузер')
+// }
+
+//  Задачи на **Spread (`...`)**
+
+// Массив `nums = [10, 20, 30]`.
+// Создай `numsPlus = [5, ...nums, 40]`.
+
+// let nums = [10, 20, 30];
+
+// let numsPlus = [5, ...nums, 40];
+
+// console.log(numsPlus);
+
+// let user = {
+//   name: 'Igor',
+//   age: 30,
+// };
+
+// let userFull = {
+//   ...user,
+//   role: 'QA',
+// };
+
+// console.log(userFull);
+
+
+// let points = [4, 7, 1, 9, 3] 
+
+// let maxPoints = Math.max(...points)
+
+// console.log(maxPoints)
