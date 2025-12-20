@@ -1987,8 +1987,7 @@ switch (status1) {
 
 // console.log(userFull);
 
-
-// let points = [4, 7, 1, 9, 3] 
+// let points = [4, 7, 1, 9, 3]
 
 // let maxPoints = Math.max(...points)
 
