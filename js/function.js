@@ -488,14 +488,549 @@ console.log(guessTheNumber(5));
 
 // console.log(multiply(1,2,3));
 
-function reverseString(str) {
-  if (typeof str == 'string') {
-    let result = str.split('').reverse().join('');
-    return result;
-  } else {
-    let result = String(str).split('').reverse().join('');
-    return result;
-  }
+// function reverseString(str) {
+//   if (typeof str == 'string') {
+//     let result = str.split('').reverse().join('');
+//     return result;
+//   } else {
+//     let result = String(str).split('').reverse().join('');
+//     return result;
+//   }
+// }
+
+// console.log(reverseString(true));
+
+// const arr = [2, 23, 32, 56, 55];
+
+// let value;
+
+// value = arr.length
+// value = Array.isArray(arr)
+
+// value = arr[2]
+
+// value = arr.indexOf(23)
+// console.log(value,arr)
+
+// let num = 10
+
+// function getArray(num) {
+//   let array = []
+
+//   for(let i = 1; i <= num; i++ ) {
+//     array.push(i)
+//   }
+//   return array
+// }
+
+// console.log(getArray(num));
+
+// let arr = [1,2,3,4,5]
+// function doubleArray(arr){
+//   return arr.concat(arr)
+// }
+
+// console.log(doubleArray(arr));
+
+//Функции высшего порядка
+
+// const arr = ['Igor', 'Kris', 'Daniil', 'Suvorov'];
+// let arrRes = [];
+
+// for (let i = 0; i < arr.length; i++) {
+//   arrRes.push(arr[i].length);
+// }
+
+// console.log(arrRes);
+
+// let arrRes2 = [];
+
+// for (let i = 0; i < arr.length; i++) {
+//   arrRes2.push(arr[i].toUpperCase());
+// }
+
+// console.log(arrRes2);
+
+// const arr = ['Igor', 'Kris', 'Daniil', 'Suvorov'];
+
+// function mupArray(arr, fn) {
+//   const res = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     res.push(fn(arr[i]));
+//   }
+//   return res;
+// }
+
+// function nameLength(el) {
+//   console.log(el);
+//   return el;
+// }
+
+// function nameToUpperCase(el) {
+//   return el.toUpperCase();
+// }
+
+// mupArray(arr, nameLength);
+// const result = mupArray(arr, nameToUpperCase);
+
+// console.log(result);
+
+// const numbers = [1, 2, 3, 4, 5];
+
+// function myFilter(arr, fn) {
+//   let numRes = [];
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (fn(arr[i])) {
+//       numRes.push(arr[i]);
+//     }
+//   }
+
+//   return numRes;
+// }
+
+// function isEven(x) {
+//   return x % 2 === 0;
+// }
+
+// let result2 = myFilter(numbers, isEven);
+
+// console.log(result2); // [2, 4]
+
+// Продаем товар только 18+
+// let age = [11,18,22,33,10]
+
+// function Kassir(arr,fn){
+//   let ageRes = []
+//   for(let i = 0; i<arr.length; i++){
+//     if(fn(arr[i])){
+//       ageRes.push(arr[i])
+//     }
+//   }
+//   return ageRes
+// }
+
+// function check(x){
+//   return x >= 18
+// }
+
+// console.log(check(17))
+
+// function alwaysFalse() {
+//   return false;
+// }
+
+// let resultKassir = Kassir(age, alwaysFalse);
+
+// console.log(resultKassir)
+
+// В бар пускают только 21 +
+
+// const visitors = [18, 21, 25, 17, 30];
+
+// function isAllowed(age){
+//   return age >= 21
+// }
+
+// function BarCheck(visitors , isAllowed) {
+//   let arrRes = []
+//   for(let i = 0; i < visitors.length; i++){
+//     if(isAllowed(visitors[i])){
+//       arrRes.push(visitors[i])
+//     }
+
+//   }
+//   return arrRes;
+// }
+
+// let resBarCheck = BarCheck(visitors,isAllowed)
+
+// console.log(resBarCheck)
+
+// Проверка заказов перед доставкой
+
+// const orders = [
+//   { id: 1, paid: true },
+//   { id: 2, paid: false },
+//   { id: 3, paid: true },
+// ];
+
+// console.log(orders[0])
+
+// function isPaid(order) {
+//   return order.paid === true;
+// }
+
+// function ordersPaid(arr, fn) {
+//   let orderResult = [];
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (fn(arr[i])) {
+//       orderResult.push(arr[i]);
+//     }
+//   }
+
+//   return orderResult;
+// }
+
+// const result = ordersPaid(orders, isPaid);
+
+// console.log(result);
+
+// const bugs = [
+//   {
+//     id: 101,
+//     status: 'open',
+//   },
+//   {
+//     id: 102,
+//     status: 'closed',
+//   },
+//   {
+//     id: 103,
+//     status: 'open',
+//   },
+// ];
+
+// function isOpen(bug) {
+
+//   return bug.status === 'open';
+// }
+
+// function releaseGate(arr, rule) {
+//   let = bagsResult = [];
+//   for (let i = 0; i < bugs.length; i++) {
+//     if (rule(arr[i])) {
+//       bagsResult.push(arr[i]);
+//     }
+//   }
+//   return bagsResult;
+// }
+
+// console.log(releaseGate(bugs, isOpen));
+
+// const tasks = [
+//   { title: 'Write tests', done: true },
+//   { title: 'Fix bug', done: false },
+//   { title: 'Review PR', done: true },
+// ];
+
+// function checkTask(task) {
+//   return task.done === true;
+// }
+
+// function filterTask(tasks, fn) {
+//   let taskResult = []
+//   for(let value of tasks){
+//     if(fn(value)){
+//       taskResult.push(value)
+//     }
+//   }
+//   return taskResult
+// }
+
+// console.log(filterTask(tasks,checkTask))
+
+// function startAge(minAge) {
+//   return function imputAge(age) {
+//     return age >= minAge;
+//   };
+// }
+
+// let resultAge = startAge(18);
+// let checkAge = resultAge(20);
+
+// console.log(startAge(18));
+// console.log(checkAge);
+
+// const response = {
+//   status: 200,
+//   body: {
+//     id: 123,
+//     name: 'Igor',
+//     role: 'QA',
+//   },
+// };
+
+// function statusIs(expectedStatus) {
+//   return function (response) {
+//     return (response.status === expectedStatus);
+//   };
+// }
+
+// const is200 = statusIs(200);
+
+// const result333 = is200(response);
+
+// console.log(result333);
+
+// const response200 = { status: 200 };
+// const response201 = { status: 201 };
+// const response404 = { status: 404 };
+
+// function expectedStatus(expectedStatus){
+//   return function(response) {
+//      return response.status === expectedStatus
+//   }
+
+// }
+
+// const exResult = expectedStatus(200)   // ex result cтало функцией
+
+// exResult(response200)
+// exResult(response201)
+// exResult(response404)
+
+// const responseOk200 = { ok: true, status: 200 };
+// const responseOk201 = { ok: true, status: 201 };
+// const responseFail200 = { ok: false, status: 200 };
+
+// function expectedStatus(expectedStatus) {
+//   return function (response) {
+//     if (response.ok === true && response.status === expectedStatus) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   };
+// }
+
+// let responseStatus = expectedStatus(200);
+
+// console.log(responseStatus(responseOk200));
+// console.log(responseStatus(responseOk201));
+// console.log(responseStatus(responseFail200));
+
+// const responses = [
+//   { status: 200, ok: true },
+//   { status: 401, ok: false },
+//   { status: 200, ok: true },
+//   { status: 500, ok: false },
+// ];
+
+// function filterResponses(arr, fn) {
+//   let responceResult = [];
+//   for (let value of arr) {
+//     if (fn(value)) {
+//       responceResult.push(value);
+//     }
+//   }
+//   return responceResult;
+// }
+
+// function checkValidation(responce) {
+//   return responce.status === 200 && responce.ok === true;
+// }
+
+// console.log(filterResponses(responses, checkValidation));
+
+// this
+
+// function getThis() {
+//   console.log(this);
+// }
+
+// getThis();
+
+// const prod1 = {
+//   name: 'Intel',
+//   price: 100 ,
+//   getPrice: function(){
+//     console.log(this)
+//   },
+//   info: {
+//     information:['2,3ghz'],
+//     getinfo: function(){
+//       console.log(this)
+//     }
+//   }
+// }
+
+// prod1.getPrice()
+// prod1.info.getinfo()
+
+// let str = 'hello world'
+
+// const user = {
+//   name: 'Igor',
+//   getName() {
+//     console.log(this.name);
+//   },
+// };
+
+// // user.getName();
+
+// let fn = user.getName.bind(user, '$');
+
+// fn();
+
+const user = {
+  id: 123,
+  userName: 'Igor',
+  position: 'QA',
+  company: 'Monto',
+  seyHello: function () {
+    console.log(
+      'Привет ' +
+        this.userName +
+        ' рады приветствовать тебя в роли ' +
+        this.position +
+        ' в компании ' +
+        this.company,
+    );
+  },
+};
+
+// user.seyHello();
+
+// let fn = user.seyHello.bind(user);
+
+// const user2 = {
+//   id: 123,
+//   userName: 'Daniil',
+//   position: 'QA Lead',
+//   company: 'MyCredit',
+// };
+
+// let fn1 = user.seyHello.bind(user2);
+// fn1();
+
+// const carAudi = {
+//   brand: 'Audi',
+//   price: 30000,
+//   showInfo: function () {
+//     console.log(this.brand + ' costs ' + this.price);
+//   },
+// };
+
+// setTimeout(carAudi.showInfo.bind(carAudi), 1000);
+
+// const carAudi = {
+//   brand: 'Audi',
+//   price: 30000,
+// };
+
+// const carBMW = {
+//   brand: 'BMW',
+//   price: 35000,
+// };
+
+// function showCar() {
+//   console.log(this.brand + ' costs ' + this.price);
+// }
+
+// // showCar();
+
+// let showAudi = showCar.bind(carAudi);
+// showAudi();
+
+// let showBMW = showCar.bind(carBMW);
+// showBMW();
+
+// const order1 = {
+//   id: 101,
+//   amount: 500,
+//   product: 'Phone',
+// };
+
+// const order2 = {
+//   id: 102,
+//   amount: 1200,
+//   product: 'laptop',
+// };
+
+// function showOrder() {
+//   console.log('Товар ' + this.product + ' costs ' + this.amount);
+// }
+
+// let showPhone = showOrder.bind(order1);
+// let showLaptop = showOrder.bind(order2);
+
+// showPhone();
+
+// setTimeout(showLaptop, 3000);
+
+// const requests = [
+//   { id: 1, status: 'success' },
+//   { id: 2, status: 'error' },
+//   { id: 3, status: 'success' },
+//   { id: 4, status: 'pending' },
+// ];
+
+// function filterRequests(arr, fn) {
+//   let reqResult = [];
+//   for (let value of arr) {
+//     if (fn(value)) {
+//       reqResult.push(value);
+//     }
+//   }
+//   return reqResult;
+// }
+
+// function checkSuccess(request) {
+//   return request.status === 'success';
+// }
+
+// let result = filterRequests(requests, checkSuccess);
+
+// setTimeout(result, 2000);
+
+// console.log(result);
+
+// const logs = [
+//   { id: 1, status: 'success', time: 120 },
+//   { id: 2, status: 'error', time: 80 },
+//   { id: 3, status: 'success', time: 300 },
+//   { id: 4, status: 'success', time: 50 },
+// ];
+
+// function checkLogs(arr, fn) {
+//   let logsResult = [];
+//   for (let value of arr) {
+//     if (fn(value)) {
+//       logsResult.push(value);
+//     }
+//   }
+//   return logsResult;
+// }
+
+// function isSuccess(log) {
+//   return log.status === 'success' && log.time > 100;
+// }
+
+// console.log(checkLogs(logs, isSuccess));
+
+// setTimeout(function () {
+//   console.log(checkLogs(logs, isSuccess));
+// }, 3000);
+
+// const responseFastOk = { ok: true, time: 120 };
+// const responseSlowOk = { ok: true, time: 600 };
+// const responseFastFail = { ok: false, time: 100 };
+
+// function expectedTime(maxTime) {
+//   return function (responce) {
+//     return responce.ok === true && responce.time <= maxTime;
+//   };
+// }
+
+// let responceTime200 = expectedTime(200);
+// responceTime200(responseFastOk);
+
+const orderSmallPaid = { paid: true, amount: 300 };
+const orderBigPaid = { paid: true, amount: 1500 };
+const orderBigUnpaid = { paid: false, amount: 2000 };
+
+function expectedOrder(minAmount) {
+  return function (response) {
+    return response.paid === true && response.amount >= minAmount;
+  };
 }
 
-console.log(reverseString(true));
+const checkAmountOrder = expectedOrder(1000);
+
+console.log(checkAmountOrder(orderSmallPaid));
+console.log(checkAmountOrder(orderBigPaid));
+console.log(checkAmountOrder(orderBigUnpaid));
+
+//cтрелочные функции
