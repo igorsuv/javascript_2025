@@ -1017,104 +1017,127 @@ const user = {
 // let responceTime200 = expectedTime(200);
 // responceTime200(responseFastOk);
 
-const orderSmallPaid = { paid: true, amount: 300 };
-const orderBigPaid = { paid: true, amount: 1500 };
-const orderBigUnpaid = { paid: false, amount: 2000 };
+// const orderSmallPaid = { paid: true, amount: 300 };
+// const orderBigPaid = { paid: true, amount: 1500 };
+// const orderBigUnpaid = { paid: false, amount: 2000 };
 
-function expectedOrder(minAmount) {
-  return function (response) {
-    return response.paid === true && response.amount >= minAmount;
-  };
-}
+// function expectedOrder(minAmount) {
+//   return function (response) {
+//     return response.paid === true && response.amount >= minAmount;
+//   };
+// }
 
-const checkAmountOrder = expectedOrder(1000);
+// const checkAmountOrder = expectedOrder(1000);
 
-console.log(checkAmountOrder(orderSmallPaid));
-console.log(checkAmountOrder(orderBigPaid));
-console.log(checkAmountOrder(orderBigUnpaid));
+// console.log(checkAmountOrder(orderSmallPaid));
+// console.log(checkAmountOrder(orderBigPaid));
+// console.log(checkAmountOrder(orderBigUnpaid));
 
-//cтрелочные функции
+// //cтрелочные функции
 
-const plus = (x = 0, y = 0) => x + y; // c аргументами
-plus(1, 2);
+// const plus = (x = 0, y = 0) => x + y; // c аргументами
+// plus(1, 2);
 
-function plusFoo(x, y) {
+// function plusFoo(x, y) {
+//   return x + y;
+// }
+
+// const withoutAgr = () => console.log('Hello world');
+
+// const singleArg = (x) => x * 2;
+
+// const moreAction = (a, b) => {
+//   a *= 2;
+//   b *= 3;
+//   return a + b;
+// };
+
+// const returnObj = (str = '') => {
+//   return {
+//     value: str,
+//     langth: str.length,
+//   };
+// };
+
+// returnObj();
+
+// //можно сократить
+
+// const returnObj1 = (str = '') => ({
+//   value: str,
+//   langth: str.length,
+// });
+
+// //нет собственного контекста
+
+// const obj = {
+//   firstName: 'Igor',
+//   age: 32,
+//   getFirstName: function () {
+//     console.log(this);
+//   },
+//   getAge: () => console.log(this),
+// };
+
+// obj.getFirstName();
+// obj.getAge();
+
+// const obj2 = {
+//   firstName: 'Igor',
+//   age: 32,
+
+//   getFirstName: function () {
+//     console.log(this);
+//   },
+//   getAgeArrow: null,
+//   getAge: () => (this.getAgeArrow = () => console.log(this)),
+// };
+
+// const obj3 = {
+//   firstName: 'Igor',
+//   age: 32,
+
+//   getFirstName: function () {
+//     console.log(this);
+//   },
+//   getAgeArrow: null,
+//   getAge() {
+//     this.getAgeArrow = () => console.log(this);
+//   },
+// };
+
+// const obj4 = {
+//   firstName: 'Igor',
+//   age: 32,
+
+//   getFirstName: function () {
+//     console.log(this);
+//   },
+//   getAgeArrow: null,
+//   getAge() {
+//     setTimeout(() => console.log(this), 1000);
+//   },
+// };
+
+const funcPrice = (price, tax) => price + tax;
+console.log(funcPrice(100, 120));
+
+const withoutAgr = () => console.log('Test started');
+
+const nextAge = (age) => age + 1;
+
+const calc = (x, y) => {
+  x = x * 2;
+  y = y * 5;
+
   return x + y;
-}
-
-const withoutAgr = () => console.log('Hello world');
-
-const singleArg = (x) => x * 2;
-
-const moreAction = (a, b) => {
-  a *= 2;
-  b *= 3;
-  return a + b;
 };
 
-const returnObj = (str = '') => {
-  return {
-    value: str,
-    langth: str.length,
-  };
-};
+console.log(calc(2, 3));
 
-returnObj();
-
-//можно сократить
-
-const returnObj1 = (str = '') => ({
-  value: str,
-  langth: str.length,
+const userNameLangth = (userName) => ({
+  name: userName,
+  length: userName.length,
 });
 
-//нет собственного контекста
-
-const obj = {
-  firstName: 'Igor',
-  age: 32,
-  getFirstName: function () {
-    console.log(this);
-  },
-  getAge: () => console.log(this)
-};
-
-obj.getFirstName(); 
-obj.getAge()
-
-const obj2 = {
-  firstName: 'Igor',
-  age: 32,
-
-  getFirstName: function () {
-    console.log(this);
-  },
-  getAgeArrow: null,
-  getAge: () => this.getAgeArrow = () => console.log(this)
-};
-
-const obj3 = {
-  firstName: 'Igor',
-  age: 32,
-
-  getFirstName: function () {
-    console.log(this);
-  },
-  getAgeArrow: null,
-  getAge(){
-    this.getAgeArrow = () => console.log(this)
-  }} 
-
-  const obj4 = {
-    firstName: 'Igor',
-    age: 32,
-
-    getFirstName: function () {
-      console.log(this);
-    },
-    getAgeArrow: null,
-    getAge() {
-      setTimeout(()=>console.log(this),1000)
-    },
-  }; 
-пше
+console.log(userNameLangth('Igor'));
