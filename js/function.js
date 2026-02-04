@@ -1141,3 +1141,5 @@ const userNameLangth = (userName) => ({
 });
 
 console.log(userNameLangth('Igor'));
+
+
