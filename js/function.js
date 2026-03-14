@@ -864,22 +864,22 @@ console.log(guessTheNumber(5));
 
 // fn();
 
-const user = {
-  id: 123,
-  userName: 'Igor',
-  position: 'QA',
-  company: 'Monto',
-  seyHello: function () {
-    console.log(
-      'Привет ' +
-        this.userName +
-        ' рады приветствовать тебя в роли ' +
-        this.position +
-        ' в компании ' +
-        this.company,
-    );
-  },
-};
+// const user = {
+//   id: 123,
+//   userName: 'Igor',
+//   position: 'QA',
+//   company: 'Monto',
+//   seyHello: function () {
+//     console.log(
+//       'Привет ' +
+//         this.userName +
+//         ' рады приветствовать тебя в роли ' +
+//         this.position +
+//         ' в компании ' +
+//         this.company,
+//     );
+//   },
+// };
 
 // user.seyHello();
 
@@ -1119,27 +1119,512 @@ const user = {
 //   },
 // };
 
-const funcPrice = (price, tax) => price + tax;
-console.log(funcPrice(100, 120));
+// const funcPrice = (price, tax) => price + tax;
+// console.log(funcPrice(100, 120));
 
-const withoutAgr = () => console.log('Test started');
+// const withoutAgr = () => console.log('Test started');
 
-const nextAge = (age) => age + 1;
+// const nextAge = (age) => age + 1;
 
-const calc = (x, y) => {
-  x = x * 2;
-  y = y * 5;
+// const calc = (x, y) => {
+//   x = x * 2;
+//   y = y * 5;
 
-  return x + y;
-};
+//   return x + y;
+// };
 
-console.log(calc(2, 3));
+// console.log(calc(2, 3));
 
-const userNameLangth = (userName) => ({
-  name: userName,
-  length: userName.length,
+// const userNameLangth = (userName) => ({
+//   name: userName,
+//   length: userName.length,
+// });
+
+// console.log(userNameLangth('Igor'));
+
+// const sum = (a,b) => a+b
+// const logStart = () => console.log('Start')
+// const makeUser = (user) => ({
+//   userName: user,
+//   userLength: user.length
+// })
+
+// const user2 = {
+//   name: 'Igor',
+//   showName() {
+//     console.log(this.name);
+//   },
+// };
+
+// user2.showName();
+
+// const user3 = {
+//   name: 'Igor',
+//   showName: () => {
+//     console.log(this.name);
+//   },
+// };
+
+// user3.showName();
+
+// const user4 = {
+//   name: 'Igor',
+//   showName: function () {
+//     const inner = () => {
+//       console.log(this.name);
+//     };
+//     inner();
+//   },
+// };
+
+// user4.showName();
+
+// const user5 = {
+//   name: 'Daniil',
+//   showName: function () {
+//     setTimeout(() => console.log(this.name), 1000);
+//   },
+// };
+
+// user5.showName()
+
+// const user2 = {
+//   name: 'Igor',
+//   show() {
+//     const fn = () => {
+//       console.log(this.name);
+//     };
+
+//     fn();
+//   },
+// };
+
+// user2.show();
+
+// const user3 = {
+//   name: 'Igor',
+//   show() {
+//     setTimeout(() => {
+//       console.log(this.name);
+//     }, 1000);
+//   },
+// };
+
+// user3.show();
+
+// const user6 = {
+//   name: 'Igor',
+//   show: function ()  {
+//     setTimeout(() => {
+//       console.log(this.name);
+//     }, 0);
+//   },
+// };
+
+// user6.show();
+
+// ОСНОВНЫЕ ПРИМЕРЫ СТРЕЛОЧНЫЕ ФУНКЦИИ
+
+// const user = {
+//   name: 'Igor',
+
+//   show: function() {
+
+//     // Стрелка НЕ создаёт свой this
+//     // Она берёт this из show()
+//     const fn = () => {
+//       console.log(this.name);
+//     };
+
+//     // Функцию обязательно нужно вызвать
+//     fn();
+//   },
+// };
+
+// // Вызов через объект → this === user
+// user.show(); // Igor
+
+// // Задача 2. Обычная функция внутри метода (ошибка)
+// const user = {
+//   name: 'Igor',
+
+//   show: function () {
+//     const fn = function () {  // тут обычная функция и она создает свой this при вызове
+//       console.log(this.name);
+//     };
+
+//     fn();
+//   },
+// };
+
+// user.show(); // undefined
+
+// const user = {
+//   name: 'Igor',
+
+//   show() {
+//     // Стрелка берёт this из show()
+//     setTimeout(() => {
+//       console.log(this.name);
+//     }, 1000);
+//   },
+// };
+
+// user.show(); // Igor (через 1 сек)
+
+// // obj.fn()      → this = obj
+// // fn()          → this = window / undefined
+// // setTimeout()  → this ≠ объект
+
+// const order = {
+//   id: 500,
+//   showIdDelayed: function () {
+//     setTimeout(() => console.log(this.id), 1000);
+//   },
+// };
+
+// order.showIdDelayed();
+
+// const user = {
+//   name: 'Igor',
+//   sayName: function () {
+//     const fn = () => {
+//       console.log(this.name);
+//     };
+//     fn();
+//   },
+// };
+
+// user.sayName();
+
+// const responses = [
+//   { status: 200, ok: true, time: 120 },
+//   { status: 500, ok: false, time: 300 },
+//   { status: 200, ok: true, time: 600 },
+// ];
+
+// function checkResponses(arr, fn) {
+//   let responcesResult = [];
+
+//   for (let value of arr) {
+//     if (fn(value)) {
+//       responcesResult.push(value);
+//     }
+//   }
+//   return responcesResult;
+// }
+
+// function checkTimeOfTrue(response) {
+//   return response.ok === true && response.time <= 300;
+// }
+
+// console.log(checkResponses(responses, checkTimeOfTrue));
+
+// const response200 = { status: 200, ok: true };
+// const response201 = { status: 201, ok: true };
+// const responseFail200 = { status: 200, ok: false };
+
+// function createStatusChecker(expectedStatus) {
+//   return function (response) {
+//     return response.ok === true && response.status === expectedStatus;
+//   };
+// }
+
+// let statusCheck = createStatusChecker(200);
+// console.log(statusCheck(response200));
+// console.log(statusCheck(response201));
+// console.log(statusCheck(responseFail200));
+
+// const responses = [
+//   { ok: true, time: 120 },
+//   { ok: false, time: 100 },
+//   { ok: true, time: 450 },
+//   { ok: true, time: 200 },
+// ];
+
+// function maxTime(maxTime) {
+//   return function (response) {
+//     return response.ok === true && response.time <= maxTime;
+//   };
+// }
+
+// const checkTime = maxTime(200);
+
+// function filterResponses(arr, checkTime) {
+//   let respRes = [];
+//   for (let value of arr) {
+//     if (checkTime(value)) {
+//       respRes.push(value);
+//     }
+//   }
+//   return respRes;
+// }
+
+// filterResponses(responses, checkTime);
+
+// Перебирающие методы массивов
+
+const states = [
+  {
+    loanId: '00000000-0000-0000-0000-000000000000',
+    orderNum: 1,
+    offerBalance: 25000.0,
+    paymentDate: '2026-02-05T10:37:23.045Z',
+    principal: 25000.0,
+    interest: 0.0,
+    interestWithPromo: null,
+    commissionInterest: 0.0,
+    overdueInterest: 0.0,
+    overpayment: 0.0,
+    pastDueDays: 0,
+    pastDueDaysTotal: 0,
+    transactionId: '00000000-0000-0000-0000-000000000000',
+    paymentStateType: 1,
+    debt: 25000.0,
+    currentPercentage: 0.0,
+    periodState: {
+      commissionOverdue: 0.0,
+      interestOverdue: 0.0,
+      totalOverdue: 0.0,
+      mandatoryPeriodCommission: 125.0,
+      mandatoryPeriodInterest: 2375.0,
+      mandatoryPeriodInterestWithPromo: 2018.7,
+      mandatoryPeriodPrincipal: 0.0,
+      mandatoryPeriodPayment: 2500.0,
+      mandatoryPeriodPaymentWithPromo: 2143.7,
+      actuallyPaidPeriodAmount: 0.0,
+      periodNumber: 1,
+      isLastPeriodDay: false,
+      isPaidPeriod: false,
+    },
+  },
+  {
+    loanId: '00000000-0000-0000-0000-000000000000',
+    orderNum: 2,
+    offerBalance: 25000.0,
+    paymentDate: '2026-02-05T10:37:23.045Z',
+    principal: 25000.0,
+    interest: 237.5,
+    interestWithPromo: null,
+    commissionInterest: 4500.0,
+    overdueInterest: 0.0,
+    overpayment: 0.0,
+    pastDueDays: 0,
+    pastDueDaysTotal: 0,
+    transactionId: null,
+    paymentStateType: 3,
+    debt: 29737.5,
+    currentPercentage: 0.1895,
+    periodState: {
+      commissionOverdue: 0.0,
+      interestOverdue: 0.0,
+      totalOverdue: 0.0,
+      mandatoryPeriodCommission: 125.0,
+      mandatoryPeriodInterest: 2375.0,
+      mandatoryPeriodInterestWithPromo: 2018.7,
+      mandatoryPeriodPrincipal: 0.0,
+      mandatoryPeriodPayment: 2500.0,
+      mandatoryPeriodPaymentWithPromo: 2143.7,
+      actuallyPaidPeriodAmount: 0.0,
+      periodNumber: 1,
+      isLastPeriodDay: false,
+      isPaidPeriod: false,
+    },
+  },
+  {
+    loanId: '00000000-0000-0000-0000-000000000000',
+    orderNum: 3,
+    offerBalance: 25000.0,
+    paymentDate: '2026-02-06T00:00:00Z',
+    principal: 25000.0,
+    interest: 475.0,
+    interestWithPromo: null,
+    commissionInterest: 4500.0,
+    overdueInterest: 0.0,
+    overpayment: 0.0,
+    pastDueDays: 0,
+    pastDueDaysTotal: 0,
+    transactionId: null,
+    paymentStateType: 3,
+    debt: 29975.0,
+    currentPercentage: 0.0095,
+    periodState: {
+      commissionOverdue: 0.0,
+      interestOverdue: 0.0,
+      totalOverdue: 0.0,
+      mandatoryPeriodCommission: 125.0,
+      mandatoryPeriodInterest: 2375.0,
+      mandatoryPeriodInterestWithPromo: 2018.7,
+      mandatoryPeriodPrincipal: 0.0,
+      mandatoryPeriodPayment: 2500.0,
+      mandatoryPeriodPaymentWithPromo: 2143.7,
+      actuallyPaidPeriodAmount: 0.0,
+      periodNumber: 1,
+      isLastPeriodDay: false,
+      isPaidPeriod: false,
+    },
+  },
+  {
+    loanId: '00000000-0000-0000-0000-000000000000',
+    orderNum: 4,
+    offerBalance: 25000.0,
+    paymentDate: '2026-02-07T00:00:00Z',
+    principal: 25000.0,
+    interest: 712.5,
+    interestWithPromo: null,
+    commissionInterest: 4500.0,
+    overdueInterest: 0.0,
+    overpayment: 0.0,
+    pastDueDays: 0,
+    pastDueDaysTotal: 0,
+    transactionId: null,
+    paymentStateType: 3,
+    debt: 30212.5,
+    currentPercentage: 0.0095,
+    periodState: {
+      commissionOverdue: 0.0,
+      interestOverdue: 0.0,
+      totalOverdue: 0.0,
+      mandatoryPeriodCommission: 125.0,
+      mandatoryPeriodInterest: 2375.0,
+      mandatoryPeriodInterestWithPromo: 2018.7,
+      mandatoryPeriodPrincipal: 0.0,
+      mandatoryPeriodPayment: 2500.0,
+      mandatoryPeriodPaymentWithPromo: 2143.7,
+      actuallyPaidPeriodAmount: 0.0,
+      periodNumber: 1,
+      isLastPeriodDay: false,
+      isPaidPeriod: false,
+    },
+  },
+  {
+    loanId: '00000000-0000-0000-0000-000000000000',
+    orderNum: 5,
+    offerBalance: 25000.0,
+    paymentDate: '2026-02-08T00:00:00Z',
+    principal: 25000.0,
+    interest: 950.0,
+    interestWithPromo: null,
+    commissionInterest: 4500.0,
+    overdueInterest: 0.0,
+    overpayment: 0.0,
+    pastDueDays: 0,
+    pastDueDaysTotal: 0,
+    transactionId: null,
+    paymentStateType: 3,
+    debt: 30450.0,
+    currentPercentage: 0.0095,
+    periodState: {
+      commissionOverdue: 0.0,
+      interestOverdue: 0.0,
+      totalOverdue: 0.0,
+      mandatoryPeriodCommission: 125.0,
+      mandatoryPeriodInterest: 2375.0,
+      mandatoryPeriodInterestWithPromo: 2018.7,
+      mandatoryPeriodPrincipal: 0.0,
+      mandatoryPeriodPayment: 2500.0,
+      mandatoryPeriodPaymentWithPromo: 2143.7,
+      actuallyPaidPeriodAmount: 0.0,
+      periodNumber: 1,
+      isLastPeriodDay: false,
+      isPaidPeriod: false,
+    },
+  },
+  {
+    loanId: '00000000-0000-0000-0000-000000000000',
+    orderNum: 6,
+    offerBalance: 25000.0,
+    paymentDate: '2026-02-09T00:00:00Z',
+    principal: 25000.0,
+    interest: 1187.5,
+    interestWithPromo: null,
+    commissionInterest: 4500.0,
+    overdueInterest: 0.0,
+    overpayment: 0.0,
+    pastDueDays: 0,
+    pastDueDaysTotal: 0,
+    transactionId: null,
+    paymentStateType: 3,
+    debt: 30687.5,
+    currentPercentage: 0.0095,
+    periodState: {
+      commissionOverdue: 0.0,
+      interestOverdue: 0.0,
+      totalOverdue: 0.0,
+      mandatoryPeriodCommission: 125.0,
+      mandatoryPeriodInterest: 2375.0,
+      mandatoryPeriodInterestWithPromo: 2018.7,
+      mandatoryPeriodPrincipal: 0.0,
+      mandatoryPeriodPayment: 2500.0,
+      mandatoryPeriodPaymentWithPromo: 2143.7,
+      actuallyPaidPeriodAmount: 0.0,
+      periodNumber: 1,
+      isLastPeriodDay: false,
+      isPaidPeriod: false,
+    },
+  },
+];
+
+//forEach
+// filter
+//map
+//reduse - разворачивает масив (из масива делает обьект)
+//some/every
+//sort
+//find
+
+//forEach
+
+// state.forEach((state, index, arr) => {
+//   console.log(state);
+// });
+
+//filter - вернет новый масив основываясь на результате вызова колбека
+
+const stateLessOrderNum2 = states.filter((state) => state.orderNum === 1);
+
+// console.log(stateLessOrderNum2);
+
+const paymentStateType3 = states.filter(
+  (state) => state.paymentStateType === 3,
+);
+
+// console.log(paymentStateType3);
+
+const orderNumMore1 = states.filter((state) => state.orderNum > 1);
+
+const debtExceedingPrincipal = states.filter(
+  (state) => state.debt > state.principal,
+);
+
+// Задача 4. Будущие платежи
+
+// не знаю как рещить
+
+// states.forEach((state) =>
+//   console.log(`Период ${state.orderNum} : долг = ${state.debt}`),
+// );
+
+// let sumDebt = 0;
+
+// states.forEach((state) => {
+//   sumDebt = sumDebt + state.debt;
+// });
+
+// console.log(`Cумарный долг = ${sumDebt}`);
+
+states.forEach((state) => {
+  if (state.interest > 0) {
+    console.log(state);
+  }
 });
 
-console.log(userNameLangth('Igor'));
+states.forEach((state) => {
+  if (state.periodState.mandatoryPeriodPayment > state.debt) {
+    console.log(`Ошибка в стейте ${state.orderNum}`);
+  }
+});
 
-
+paymentStateType3.forEach((state) => {
+  console.log(`Стейт ${state.orderNum} : долг ${state.debt} `);
+});
